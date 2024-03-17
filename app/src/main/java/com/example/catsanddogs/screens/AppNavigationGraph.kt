@@ -6,13 +6,16 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.catsanddogs.LoginViewModel
 import com.example.catsanddogs.R
+import com.example.catsanddogs.data.LoginUIEvent
 import com.example.catsanddogs.data.SignupViewModel
 import com.example.catsanddogs.data.SignupUIEvent
 
 @Preview(showSystemUi = true)
 @Composable
-fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel()) {
+fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
+                       loginViewModel: LoginViewModel = viewModel()) {
 
     val imageId = arrayOf(
         R.drawable.male_doc,
@@ -57,7 +60,11 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel()) {
         }
 
         composable(Routes.login_screen){
-            LoginScreen(navController = navController)
+            LoginScreen(navController = navController,
+                onButtonClicked = {
+                    loginViewModel.onEvent(LoginUIEvent.LoginButtonClicked(navController))
+                },
+                loginViewModel)
         }
 
         composable(Routes.option_screen){

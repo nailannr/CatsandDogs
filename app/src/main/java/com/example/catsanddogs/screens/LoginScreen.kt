@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -37,9 +38,10 @@ import com.example.catsanddogs.R
 import com.example.catsanddogs.data.LoginUIEvent
 import com.example.catsanddogs.data.SignupViewModel
 import com.example.catsanddogs.data.SignupUIEvent
+import kotlin.math.log
 
 @Composable
-fun LoginScreen(navController: NavController,
+fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
                 loginViewModel: LoginViewModel = viewModel()) {
     //val uiColor = if (isSystemInDarkTheme()) Color.White else Black
     Surface()
@@ -98,14 +100,15 @@ fun LoginScreen(navController: NavController,
                         )
                     }
                     
-                    buttonComponent(onButtonClicked = {
-                                                      loginViewModel.onEvent(LoginUIEvent.LoginButtonClicked)
-                    },
+                    buttonComponent(onButtonClicked = onButtonClicked,
                         isEnabled = loginViewModel.allValidationsPassed.value)
 
 
                 }
             }
+        }
+        if(loginViewModel.loginInProgress.value){
+            CircularProgressIndicator()
         }
     }
 }

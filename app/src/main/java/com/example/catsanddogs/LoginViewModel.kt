@@ -2,9 +2,11 @@ package com.example.catsanddogs
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
 import com.example.catsanddogs.data.LoginUIEvent
 import com.example.catsanddogs.data.LoginUIState
 import com.example.catsanddogs.data.rules.Validator
+import com.example.catsanddogs.screens.Routes
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel : ViewModel(){
@@ -15,6 +17,7 @@ class LoginViewModel : ViewModel(){
     var loginInProgress = mutableStateOf(false)
 
     fun onEvent(event:LoginUIEvent){
+        validateLoginUIDataWithRules()
         when(event){
             is LoginUIEvent.EmailChanged ->{
                 loginUIState.value = loginUIState.value.copy(
@@ -28,7 +31,7 @@ class LoginViewModel : ViewModel(){
             }
 
             is LoginUIEvent.LoginButtonClicked ->{
-                login()
+                login(navController = event.navController)
             }
         }
 
@@ -53,15 +56,17 @@ class LoginViewModel : ViewModel(){
         allValidationsPassed.value = emailResult.status && passwordResult.status
     }
 
-    private fun login() {
+    private fun login(navController: NavController) {
+        loginInProgress.value = true
         val email = loginUIState.value.email
         val password = loginUIState.value.password
 
         FirebaseAuth.getInstance()
             .signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
+                loginInProgress.value = false
                 if(it.isSuccessful){
-
+                    navController.navigate(Routes.home_screen)
                 }
             }
             .addOnFailureListener{
