@@ -240,7 +240,7 @@ fun PetOwnerHomeScreen(navController: NavController) {
                                         )
 
                                         .clickable {
-//                                            navController.navigate(Screens.VetListScreen.route)
+                                            navController.navigate(Routes.vet_list)
                                         }) {
                                     Text(
                                         text = "Looking for a vet?",

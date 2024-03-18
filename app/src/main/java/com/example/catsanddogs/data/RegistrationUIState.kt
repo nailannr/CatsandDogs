@@ -11,6 +11,7 @@ data class RegistrationUIState(
     val degree: String = "",
     val work: String = "",
     val image: String = "",
+    val asVet: Boolean = false,
 
     var firstNameError: Boolean = false,
     var lastNameError: Boolean = false,

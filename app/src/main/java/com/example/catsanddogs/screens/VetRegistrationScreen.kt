@@ -134,7 +134,8 @@ fun VetRegistrationScreen(navController: NavController,
                 ){
                     val fName= NormalTextField(name = "First Name", modifier = Modifier.fillMaxWidth(),
                         onTextSelected ={
-                            firstName = it },
+                            firstName = it
+                                        },
                         errorStatus = true
 //                        errorStatus = signupViewModel.registrationUIState.value.firstNameError
                         )
@@ -266,7 +267,7 @@ fun upload(
         "contactNum" to "$contactNum",
         "degree" to "$degree",
         "work" to "$work",
-        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Ffemaledoc.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
+        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2F${unique_image_name}.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
 
     )
 

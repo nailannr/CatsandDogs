@@ -24,6 +24,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.catsanddogs.R
+import com.example.catsanddogs.data.RegistrationUIState
+import com.example.catsanddogs.data.SignupViewModel
 
 @Composable
 fun OptionScreen(navController: NavController){
@@ -75,7 +77,7 @@ fun OptionScreen(navController: NavController){
             shape = RoundedCornerShape(25.dp)
         ){
             Text(
-                text="Veterenarian",
+                text="Veterinarian",
                 fontSize = 26.sp,
                 fontWeight = FontWeight.Bold
 
