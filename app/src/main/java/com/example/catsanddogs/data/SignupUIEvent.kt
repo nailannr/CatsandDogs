@@ -9,7 +9,11 @@ sealed class SignupUIEvent{
     data class PhoneNumChanged(val phoneNum: String) : SignupUIEvent()
     data class LicenseChanged(val license: String) : SignupUIEvent()
     data class SetPassChanged(val setPass: String): SignupUIEvent()
-    data class ConfirmPassChanged(val confirmPass: String): SignupUIEvent()
+//    data class ConfirmPassChanged(val confirmPass: String): SignupUIEvent()
+    data class DegreeChanged(val degree: String): SignupUIEvent()
+    data class WorkChanged(val work: String): SignupUIEvent()
+
+    data class ImageChanged(val image: String): SignupUIEvent()
 
     data class RegisterButtonClicked(val navController: NavController) : SignupUIEvent()
 }

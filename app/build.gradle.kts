@@ -75,7 +75,12 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.7.2")
 
     implementation (platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
 
     implementation("com.google.firebase:firebase-auth-ktx")
+
+    implementation("androidx.compose.material:material-icons-extended-android:1.6.2")
 
 }

@@ -79,16 +79,31 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
         }
 
         composable(Routes.vet_registration){
-            VetRegistrationScreen(navController = navController)
+            VetRegistrationScreen(navController = navController,
+                onButtonClicked = {
+                    signupViewModel.onEvent(SignupUIEvent.RegisterButtonClicked(navController)) },
+                signupViewModel)
         }
 
         composable(Routes.home_screen){
             PetOwnerHomeScreen(navController = navController)
         }
 
-//        composable(Routes.cure_screen) {
-//            cureScreen(navController = navController)
-//        }
+        composable(Routes.about_us){
+            AboutUs(navController = navController)
+        }
+
+        composable(Routes.cure_screen) {
+            CureScreen(navController = navController)
+        }
+        
+        composable(Routes.foster_screen){
+            FosterScreen(navController = navController)
+        }
+        
+        composable(Routes.home_screen_vet){
+            HomeScreenVet(navController = navController)
+        }
 
 
 //        composable(Routes.vet_list){

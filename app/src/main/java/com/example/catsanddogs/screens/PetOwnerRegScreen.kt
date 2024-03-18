@@ -37,7 +37,7 @@ fun PetOwnerRegScreen(onButtonClicked: () -> Unit,
                       signupViewModel: SignupViewModel = viewModel()
 ) {
     Box(modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center){
+        contentAlignment = Alignment.Center) {
         Surface()
         {
             Column(
@@ -45,68 +45,83 @@ fun PetOwnerRegScreen(onButtonClicked: () -> Unit,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(0xFFFFDBE9))) {
+                    .background(Color(0xFFFFDBE9))
+                    .verticalScroll(
+                        rememberScrollState()
+                    )
+            ) {
 
                 TopSection()
 
                 Spacer(modifier = Modifier.height(15.dp))
 
-                Column(modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 10.dp)
-                    .verticalScroll(
-                        rememberScrollState()
-                    )){
-                    var fName= NormalTextField(name = "First Name", modifier = Modifier.fillMaxWidth(),
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(horizontal = 10.dp)
+                ) {
+                    var fName = NormalTextField(
+                        name = "First Name", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.FirstNameChanged(it))
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.firstNameError)
+                        errorStatus = signupViewModel.registrationUIState.value.firstNameError
+                    )
 
-                    var lName= NormalTextField(name = "Last Name", modifier = Modifier.fillMaxWidth(),
+                    var lName = NormalTextField(
+                        name = "Last Name", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.LastNameChanged(it))
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.lastNameError)
+                        errorStatus = signupViewModel.registrationUIState.value.lastNameError
+                    )
 
-                    var email= NormalTextField(name = "Email", modifier = Modifier.fillMaxWidth(),
+                    var email = NormalTextField(
+                        name = "Email", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.EmailChanged(it))
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.emailError)
+                        errorStatus = signupViewModel.registrationUIState.value.emailError
+                    )
 
-                    var phn= NormalTextField(name = "Phone Number", modifier = Modifier.fillMaxWidth(),
+                    var phn = NormalTextField(
+                        name = "Phone Number", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.PhoneNumChanged(it))
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.phoneNumError)
+                        errorStatus = signupViewModel.registrationUIState.value.phoneNumError
+                    )
 
-                    var sPass= PasswordTextField(name = "Set Password", modifier = Modifier.fillMaxWidth(),
+                    var sPass = PasswordTextField(
+                        name = "Set Password", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.SetPassChanged(it))
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.setPassError)
-
-                    var cPass= PasswordTextField(name = "Confirm Password", modifier = Modifier.fillMaxWidth(),
-                        onTextSelected = {
-                            signupViewModel.onEvent(SignupUIEvent.ConfirmPassChanged(it))
-                        },
-                        errorStatus = signupViewModel.registrationUIState.value.confirmPassError)
-
-                    Spacer(modifier = Modifier.height(25.dp))
-                    buttonComponent(onButtonClicked = onButtonClicked,
-                        isEnabled = signupViewModel.allValidationPassedP.value
+                        errorStatus = signupViewModel.registrationUIState.value.setPassError
                     )
+
+//                    var cPass = PasswordTextField(
+//                        name = "Confirm Password", modifier = Modifier.fillMaxWidth(),
+//                        onTextSelected = {
+//                            signupViewModel.onEvent(SignupUIEvent.ConfirmPassChanged(it))
+//                        },
+//                        errorStatus = signupViewModel.registrationUIState.value.confirmPassError
+//                    )
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
                 }
+                buttonComponent(
+                    onButtonClicked = onButtonClicked,
+                    isEnabled = signupViewModel.allValidationPassedP.value
+                )
             }
         }
 
-        if(signupViewModel.signUpInProgress.value){
+        if (signupViewModel.signUpInProgress.value) {
             CircularProgressIndicator()
         }
-
     }
-
 }
 
 @Composable

@@ -7,7 +7,10 @@ data class RegistrationUIState(
     var phoneNum: String =  "",
     var license: String= "",
     var setPass: String = "",
-    var confirmPass: String = "",
+//    var confirmPass: String = "",
+    val degree: String = "",
+    val work: String = "",
+    val image: String = "",
 
     var firstNameError: Boolean = false,
     var lastNameError: Boolean = false,
@@ -15,5 +18,8 @@ data class RegistrationUIState(
     var phoneNumError: Boolean = false,
     var licenseError: Boolean = false,
     var setPassError: Boolean = false,
-    var confirmPassError: Boolean = false
+//    var confirmPassError: Boolean = false,
+    var degreeError: Boolean = false,
+    var workError: Boolean = false,
+    var imageError: Boolean = false
 )

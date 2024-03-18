@@ -31,17 +31,35 @@ object Validator {
         )
     }
 
+    fun validateDegree (degree: String) : ValidationResult{
+        return ValidationResult(
+            (!degree.isNullOrEmpty())
+        )
+    }
+
+    fun validateWork (work: String) : ValidationResult{
+        return ValidationResult(
+            (!work.isNullOrEmpty())
+        )
+    }
+
+    fun validateImage (image: String) : ValidationResult{
+        return ValidationResult(
+            (!image.isNullOrEmpty())
+        )
+    }
+
     fun validateSetPassword(setPass: String) : ValidationResult{
         return ValidationResult(
             (!setPass.isNullOrEmpty() && setPass.length>=6)
         )
     }
 
-    fun validateConfirmPassword(confirmPass: String) : ValidationResult{
-        return ValidationResult(
-            (!confirmPass.isNullOrEmpty() && confirmPass.length>=6)
-        )
-    }
+//    fun validateConfirmPassword(confirmPass: String) : ValidationResult{
+//        return ValidationResult(
+//            (!confirmPass.isNullOrEmpty() && confirmPass.length>=6)
+//        )
+//    }
 
 
 }

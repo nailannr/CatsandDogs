@@ -44,8 +44,8 @@ class LoginViewModel : ViewModel(){
             email = loginUIState.value.email
         )
 
-        val passwordResult = Validator.validateConfirmPassword(
-            confirmPass = loginUIState.value.password
+        val passwordResult = Validator.validateSetPassword(
+            setPass = loginUIState.value.password
         )
 
         loginUIState.value = loginUIState.value.copy(

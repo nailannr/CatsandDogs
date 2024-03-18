@@ -7,6 +7,9 @@ object Routes {
     const val vet_registration = "vet_registration"
     const val pet_owner_reg = "pet_owner_reg"
     const val home_screen = "home_screen"
+    const val about_us = "about_us"
+    const val home_screen_vet = "home_screen_vet"
+    const val foster_screen = "foster_screen"
 
     const val vet_list = "vet_list"
     const val vet_details = "vet_details"

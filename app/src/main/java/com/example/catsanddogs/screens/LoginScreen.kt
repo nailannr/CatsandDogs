@@ -44,73 +44,77 @@ import kotlin.math.log
 fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
                 loginViewModel: LoginViewModel = viewModel()) {
     //val uiColor = if (isSystemInDarkTheme()) Color.White else Black
-    Surface()
-    {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color(0xFFFFDBE9))) {
+    Box(modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center){
+        Surface()
+        {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color(0xFFFFDBE9))) {
 
-            TopSection()
+                TopSection()
 
-            Spacer(modifier = Modifier.height(15.dp))
-
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 10.dp)
-                .verticalScroll(
-                    rememberScrollState()
-                )){
-
-                NormalTextField(name = "Email", modifier = Modifier.fillMaxWidth(),
-                    onTextSelected = {
-                                     loginViewModel.onEvent(LoginUIEvent.EmailChanged(it))
-                    },
-                    errorStatus = loginViewModel.loginUIState.value.emailError
-                    )
                 Spacer(modifier = Modifier.height(15.dp))
-                PasswordTextField(name = "Password", modifier = Modifier.fillMaxWidth(),
-                    onTextSelected = {
-                        loginViewModel.onEvent(LoginUIEvent.PasswordChanged(it))
-                    },
-                    errorStatus = loginViewModel.loginUIState.value.passwordError)
-                Spacer(modifier = Modifier.height(25.dp))
-                Row(modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ){
-                    Button(
-                        modifier = Modifier
-                            .width(150.dp)
-                            .height(50.dp),
-                        onClick = {
-                            navController.navigate(Routes.option_screen)
+
+                Column(modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 10.dp)
+                    .verticalScroll(
+                        rememberScrollState()
+                    )){
+
+                    NormalTextField(name = "Email", modifier = Modifier.fillMaxWidth(),
+                        onTextSelected = {
+                            loginViewModel.onEvent(LoginUIEvent.EmailChanged(it))
                         },
-                        colors = ButtonDefaults.buttonColors(
-                            Color(218, 102, 147, 255),
-                            contentColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(size = 4.dp)
+                        errorStatus = loginViewModel.loginUIState.value.emailError
+                    )
+                    Spacer(modifier = Modifier.height(15.dp))
+                    PasswordTextField(name = "Password", modifier = Modifier.fillMaxWidth(),
+                        onTextSelected = {
+                            loginViewModel.onEvent(LoginUIEvent.PasswordChanged(it))
+                        },
+                        errorStatus = loginViewModel.loginUIState.value.passwordError)
+                    Spacer(modifier = Modifier.height(25.dp))
+                    Row(modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ){
+                        Button(
+                            modifier = Modifier
+                                .width(150.dp)
+                                .height(50.dp),
+                            onClick = {
+                                navController.navigate(Routes.option_screen)
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                Color(218, 102, 147, 255),
+                                contentColor = Color.White
+                            ),
+                            shape = RoundedCornerShape(size = 4.dp)
 
-                    ) {
-                        Text(
-                            text = "New Here? Register instead",
-                            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold)
-                        )
+                        ) {
+                            Text(
+                                text = "New Here? Register instead",
+                                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold)
+                            )
+                        }
+
+                        buttonComponent(onButtonClicked = onButtonClicked,
+                            isEnabled = loginViewModel.allValidationsPassed.value)
+
+
                     }
-                    
-                    buttonComponent(onButtonClicked = onButtonClicked,
-                        isEnabled = loginViewModel.allValidationsPassed.value)
-
-
                 }
             }
-        }
-        if(loginViewModel.loginInProgress.value){
-            CircularProgressIndicator()
+            if(loginViewModel.loginInProgress.value){
+                CircularProgressIndicator()
+            }
         }
     }
+
 }
 
 

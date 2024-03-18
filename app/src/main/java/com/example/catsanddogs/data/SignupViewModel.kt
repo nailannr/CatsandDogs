@@ -48,9 +48,27 @@ class SignupViewModel : ViewModel() {
                     setPass = event.setPass
                 )
             }
-            is SignupUIEvent.ConfirmPassChanged ->{
+//            is SignupUIEvent.ConfirmPassChanged ->{
+//                registrationUIState.value = registrationUIState.value.copy(
+//                    confirmPass = event.confirmPass
+//                )
+//            }
+
+            is SignupUIEvent.DegreeChanged ->{
                 registrationUIState.value = registrationUIState.value.copy(
-                    confirmPass = event.confirmPass
+                    degree = event.degree
+                )
+            }
+
+            is SignupUIEvent.WorkChanged -> {
+                registrationUIState.value = registrationUIState.value.copy(
+                    work = event.work
+                )
+            }
+
+            is SignupUIEvent.ImageChanged ->{
+                registrationUIState.value = registrationUIState.value.copy(
+                    image = event.image
                 )
             }
 
@@ -63,7 +81,7 @@ class SignupViewModel : ViewModel() {
     private fun signUp(navController: NavController){
         createUserInFirebase(
             email = registrationUIState.value.email,
-            password = registrationUIState.value.confirmPass,
+            password = registrationUIState.value.setPass,
             navController = navController
         )
     }
@@ -89,13 +107,25 @@ class SignupViewModel : ViewModel() {
             license = registrationUIState.value.license
         )
 
+        val degreeResult = Validator.validateDegree(
+            degree = registrationUIState.value.degree
+        )
+
+        val workResult = Validator.validateWork(
+            work = registrationUIState.value.work
+        )
+
+        val imageResult = Validator.validateImage(
+            image = registrationUIState.value.image
+        )
+
         val setPassResult = Validator.validateSetPassword(
             setPass = registrationUIState.value.setPass
         )
 
-        val confirmPassResult = Validator.validateConfirmPassword(
-            confirmPass = registrationUIState.value.confirmPass
-        )
+//        val confirmPassResult = Validator.validateConfirmPassword(
+//            confirmPass = registrationUIState.value.confirmPass
+//        )
 
         registrationUIState.value = registrationUIState.value.copy(
             firstNameError = fNameResult.status,
@@ -104,23 +134,29 @@ class SignupViewModel : ViewModel() {
             phoneNumError = phoneNumResult.status,
             licenseError = licenseResult.status,
             setPassError = setPassResult.status,
-            confirmPassError = confirmPassResult.status
+//            confirmPassError = confirmPassResult.status,
+            degreeError = degreeResult.status,
+            workError = workResult.status,
+            imageError = imageResult.status
         )
 
         allValidationPassedV.value = fNameResult.status &&
                 lNameResult.status &&
                 emailResult.status &&
                 phoneNumResult.status &&
-                licenseResult.status &&
-                setPassResult.status &&
-                confirmPassResult.status
+//                licenseResult.status &&
+                degreeResult.status &&
+                workResult.status &&
+                imageResult.status &&
+                setPassResult.status
+//                confirmPassResult.status
 
         allValidationPassedP.value = fNameResult.status &&
                 lNameResult.status &&
                 emailResult.status &&
                 phoneNumResult.status &&
-                setPassResult.status &&
-                confirmPassResult.status
+                setPassResult.status
+//                confirmPassResult.status
 
     }
 
