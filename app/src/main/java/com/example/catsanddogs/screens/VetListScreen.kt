@@ -1,31 +1,30 @@
 package com.example.catsanddogs.screens
 
-import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.spring
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.automirrored.outlined.ExitToApp
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -42,35 +41,48 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
 import com.example.catsanddogs.R
-import com.example.catsanddogs.data.DataSource
+import com.example.catsanddogs.data.SignupViewModel
+import com.example.catsanddogs.data.vetData.VetData
+import com.example.catsanddogs.data.vetData.VetUIState
 import kotlinx.coroutines.launch
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CureScreen(navController: NavController) {
-    Column (
+//fun Screens.VetListScreen(){
+fun VetListScreen(
+    VetData: com.example.catsanddogs.data.vetData.VetData = viewModel(),
+    signupViewModel: SignupViewModel = viewModel(),
+//    imageId: Array<Int>,
+//    names: Array<String>,
+//    degrees: Array<String>,
+    navController: NavController,
+    modifier: Modifier = Modifier
+) {
+    var vets = VetData.stateList.value
+
+    Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-    ){
+        //modifier = Modifier.fillMaxSize()
+    ) {
         val items = listOf(
             NavigationBarItems(
                 route = Routes.home_screen,
@@ -170,97 +182,89 @@ fun CureScreen(navController: NavController) {
                         scrollBehavior = scrollBehavior
                     )
                 }
-            ) {it
-                CureList(
-                    cureList = DataSource().loadCures()
-                )
+            ) { values ->
+                LazyColumn(
+                    contentPadding = PaddingValues(16.dp),
+                    modifier = Modifier.padding(values)
+                ) {
+//                    val itemCount = imageId.size
 
-            }
-        }
-    }
-}
-
-@Composable
-fun CureList(
-    //name : Text,
-    cureList: List<Cure>,
-    modifier: Modifier = Modifier
-) {
-    LazyColumn(modifier = modifier) {
-        //val curelist = cureList.size
-        items(cureList) { cure ->
-            CureCard(
-                cure = cure,
-                modifier = Modifier
-                    .padding(8.dp)
-                    .background(Color(0xFFFFDBE9))
-                    .border(4.dp, Color(0xFFFFDBE9),RectangleShape)
-                //topic = topic
-            )
-        }
-    }
-}
-
-@Composable
-fun CureCard(
-    cure: Cure,
-    modifier: Modifier = Modifier
-//    itemIndex: Int,
-//    topic: Array<String>
-) {
-
-    Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .background(Color(0xFFFFDBE9))
-    ) {
-        var expanded by remember { mutableStateOf(false) }
-
-//           ekhane ekta column dao
-        Row(
-            modifier
-                .background(Color(0xFFFFDBE9))
-                .padding(15.dp)
-                .animateContentSize(
-                    animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioNoBouncy,
-                        stiffness = Spring.StiffnessMedium
-                    )
-                )
-        ){
-            Column(
-                modifier= Modifier
-                    .weight(1f)
-                    .padding(10.dp)
-            ) {
-
-                Text(
-                    text = LocalContext.current.getString(cure.diseaseName),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp,
-                    modifier = Modifier
-                        .padding(15.dp)
-                        .fillMaxWidth(),
-                )
-                if (expanded) {
-                    Text(
-                        text = LocalContext.current.getString(cure.cureDetails),
-                        modifier = Modifier.padding(16.dp)
-                    )
+                    items(vets) {
+                        ColumnItem(
+                            modifier,
+                            vet = it,
+                            signupViewModel=signupViewModel
+//                            painter = imageId,
+//                            title = names,
+//                            degrees = degrees,
+//                            itemIndex = it,
+//                            navController = navController
+                        )
+                    }
                 }
             }
+        }
+    }
 
-            IconButton(onClick = { expanded = !expanded }) {
-                Icon(
-                    imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-                    contentDescription = if (expanded) {
-                        stringResource(id = R.string.show_less)
-                    } else {
-                        stringResource(id = R.string.show_more)
-                    }
+
+}
+
+
+@Composable
+fun ColumnItem(
+    modifier: Modifier,
+    vet: VetUIState,
+    signupViewModel: SignupViewModel = viewModel()
+//    painter: Array<Int>,
+//    title: Array<String>,
+//    degrees: Array<String>,
+//    itemIndex: Int,
+//    navController: NavController
+) {
+    Card(
+        modifier
+            .padding(10.dp)
+            .wrapContentSize()
+            .clickable {
+//                navController.navigate(route = "vet_details/$itemIndex")
+            },
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFFFFDBE9)
+        ),
+        elevation = CardDefaults.cardElevation(10.dp)
+    ) {
+        Row(
+            modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.Top,
+            horizontalArrangement = Arrangement.spacedBy(15.dp)
+        ) {
+            AsyncImage(
+                model = vet.image,
+                contentDescription = null,
+                modifier = modifier
+                    .size(140.dp),
+//                    .padding(dimensionResource(R.dimen.padding_small))
+//                    .clip(MaterialTheme.shapes.small),
+                contentScale = ContentScale.Crop
+            )
+//            Image(
+//                painter = painterResource(id = painter[itemIndex]),
+//                contentDescription = title[itemIndex],
+//                modifier.size(140.dp)
+//            )
+            Column(
+                modifier.padding(12.dp)
+            ) {
+                Text(
+                    text = vet.firstName + " " + vet.lastName,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = vet.degree,
+                    fontSize = 18.sp
                 )
             }
         }
-
     }
 }

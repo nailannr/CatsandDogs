@@ -26,7 +26,7 @@ suspend fun getDataFromFirestore(): MutableList<VetUIState> {
 
     var aboutList= mutableListOf<VetUIState>()
     try{
-        db.collection("petInfo")
+        db.collection("vetInfo")
             .get()
             .await().map{
                 Log.d("hello","$it")

@@ -105,6 +105,10 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
             HomeScreenVet(navController = navController)
         }
 
+        composable(Routes.vet_list){
+            VetListScreen( navController = navController)
+        }
+
 
 //        composable(Routes.vet_list){
 //            VetListScreen(imageId,names,degrees, navController)

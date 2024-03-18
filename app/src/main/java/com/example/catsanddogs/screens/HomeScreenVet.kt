@@ -123,8 +123,16 @@ fun HomeScreenVet(navController: NavController) {
                                     },
                                     selected = index == selectedItemIndex,
                                     onClick = {
-                                        //navController.navigate(navigationBarItems.route)
                                         selectedItemIndex = index
+                                        if(index ==1){
+                                            navController.popBackStack(
+                                                route = navigationBarItems.route,
+                                                inclusive = false
+                                            )
+                                        }else{
+                                            navController.navigate(navigationBarItems.route)
+                                        }
+
                                         scope.launch {
                                             drawerState.close()
                                         }

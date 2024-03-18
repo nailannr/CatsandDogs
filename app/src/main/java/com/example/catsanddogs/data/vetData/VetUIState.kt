@@ -5,7 +5,7 @@ data class VetUIState (
     val lastName: String = "",
     val eMail: String = "",
     val contactNum: String = "",
-    val dEgree: String = "",
-    val wOrk: String = "",
-    val iMage: String = ""
+    val degree: String = "",
+    val work: String = "",
+    val image: String = ""
 )

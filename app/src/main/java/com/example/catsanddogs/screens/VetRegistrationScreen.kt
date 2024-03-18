@@ -55,6 +55,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.catsanddogs.data.SignupViewModel
 import com.example.catsanddogs.data.SignupUIEvent
+import com.example.catsanddogs.data.vetData.VetUIState
 import com.example.catsanddogs.ui.theme.textFieldContainer
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -63,6 +64,7 @@ import com.google.firebase.storage.storage
 import java.util.UUID
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VetRegistrationScreen(navController: NavController,
                           onButtonClicked: () -> Unit,
@@ -73,6 +75,31 @@ fun VetRegistrationScreen(navController: NavController,
     var uri by remember{
         mutableStateOf<Uri?>(null)
     }
+
+    var firstName by rememberSaveable {
+        mutableStateOf("")
+    }
+
+    var lastName by rememberSaveable {
+        mutableStateOf("")
+    }
+
+    var email by rememberSaveable {
+        mutableStateOf("")
+    }
+
+    var contactNum by rememberSaveable {
+        mutableStateOf("")
+    }
+
+    var degree by rememberSaveable {
+        mutableStateOf("")
+    }
+
+    var work by rememberSaveable {
+        mutableStateOf("")
+    }
+
     val singlePhotoPicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.PickVisualMedia(),
         onResult = {
@@ -105,42 +132,55 @@ fun VetRegistrationScreen(navController: NavController,
                         .fillMaxSize()
                         .padding(horizontal = 10.dp)
                 ){
-                    var fName= NormalTextField(name = "First Name", modifier = Modifier.fillMaxWidth(),
+                    val fName= NormalTextField(name = "First Name", modifier = Modifier.fillMaxWidth(),
                         onTextSelected ={
-                            signupViewModel.onEvent(SignupUIEvent.FirstNameChanged(it)) },
-                        errorStatus = signupViewModel.registrationUIState.value.firstNameError)
+                            firstName = it },
+                        errorStatus = true
+//                        errorStatus = signupViewModel.registrationUIState.value.firstNameError
+                        )
+
 
                     var lName= NormalTextField(name = "Last Name", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
-                            signupViewModel.onEvent(SignupUIEvent.LastNameChanged(it)) },
-                        errorStatus = signupViewModel.registrationUIState.value.lastNameError)
+                            lastName = it },
+//                        errorStatus = signupViewModel.registrationUIState.value.lastNameError
+                        errorStatus = true
+                    )
 
                     var email= NormalTextField(name = "Email", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
-                            signupViewModel.onEvent(SignupUIEvent.EmailChanged(it)) },
-                        errorStatus = signupViewModel.registrationUIState.value.emailError)
+                           email = it },
+//                        errorStatus = signupViewModel.registrationUIState.value.emailError
+                        errorStatus = true
+                    )
 
                     var phn= NormalTextField(name = "Phone Number", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
-                            signupViewModel.onEvent(SignupUIEvent.PhoneNumChanged(it)) },
-                        errorStatus = signupViewModel.registrationUIState.value.phoneNumError)
+                            contactNum = it },
+//                        errorStatus = signupViewModel.registrationUIState.value.phoneNumError
+                        errorStatus = true
+                    )
 
 //                    var lis= NormalTextField(name = "License Number", modifier = Modifier.fillMaxWidth(),
 //                        onTextSelected = {
 //                            signupViewModel.onEvent(SignupUIEvent.LicenseChanged(it)) },
 //                        errorStatus = signupViewModel.registrationUIState.value.licenseError)
 
-                    NormalTextField(name = "Degree", modifier = Modifier.fillMaxWidth(),
+                    var degree =NormalTextField(name = "Degree", modifier = Modifier.fillMaxWidth(),
                         onTextSelected ={
-                                        signupViewModel.onEvent(SignupUIEvent.DegreeChanged(it))
+                                        degree = it
                         } ,
-                        errorStatus = signupViewModel.registrationUIState.value.degreeError)
+//                        errorStatus = signupViewModel.registrationUIState.value.degreeError
+                        errorStatus = true
+                    )
 
-                    NormalTextField(name = "Currently workin in", modifier = Modifier.fillMaxWidth(),
+                    var work = NormalTextField(name = "Currently workin in", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
-                                         signupViewModel.onEvent(SignupUIEvent.WorkChanged(it))
+                                         work = it
                         },
-                        errorStatus = signupViewModel.registrationUIState.value.workError)
+//                        errorStatus = signupViewModel.registrationUIState.value.workError
+                        errorStatus = true
+                    )
 
 
                     // image textfield:
@@ -156,7 +196,7 @@ fun VetRegistrationScreen(navController: NavController,
 //                            uri = it
 //                        }
 //                    )
-                    imageTextField(
+                    var iMage = imageTextField(
                         modifier = Modifier.fillMaxWidth(),
                         name = "Add image",
                         onValueChange = {
@@ -176,7 +216,9 @@ fun VetRegistrationScreen(navController: NavController,
                     var sPass= PasswordTextField(name = "Set Password", modifier = Modifier.fillMaxWidth(),
                         onTextSelected = {
                             signupViewModel.onEvent(SignupUIEvent.SetPassChanged(it)) },
-                        errorStatus = signupViewModel.registrationUIState.value.setPassError)
+//                        errorStatus = signupViewModel.registrationUIState.value.setPassError
+                        errorStatus = true
+                    )
 
 //                    var cPass= PasswordTextField(name = "Confirm Password", modifier = Modifier.fillMaxWidth(),
 //                        onTextSelected = {
@@ -192,15 +234,15 @@ fun VetRegistrationScreen(navController: NavController,
                         uri?.let{
                             upload(uri=it,
                                 context=context,
-                                firstName = signupViewModel.registrationUIState.value.firstName,
-                                lastName = signupViewModel.registrationUIState.value.lastName,
-                                email = signupViewModel.registrationUIState.value.email,
-                                contactNum = signupViewModel.registrationUIState.value.phoneNum,
-                                degree = signupViewModel.registrationUIState.value.degree,
-                                work = signupViewModel.registrationUIState.value.work)
+                                firstName = firstName,
+                                lastName = lastName,
+                                email = email,
+                                contactNum = contactNum,
+                                degree = degree,
+                                work = work)
                         }
                     },
-                    isEnabled = signupViewModel.allValidationPassedV.value)
+                    isEnabled = true)
             }
         }
         if (signupViewModel.signUpInProgress.value) {
@@ -220,11 +262,11 @@ fun upload(
     val newVet = hashMapOf(
         "firstName" to "$firstName",
         "lastName" to "$lastName",
-        "eMail" to "$email",
+        "email" to "$email",
         "contactNum" to "$contactNum",
-        "dEgree" to "$degree",
-        "wOrk" to "$work",
-        "iMage" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Ffemaledoc.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
+        "degree" to "$degree",
+        "work" to "$work",
+        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Ffemaledoc.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
 
     )
 
