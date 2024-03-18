@@ -1,2 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\main\res"><file name="background" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\background.jpeg" qualifiers="" type="drawable"/><file name="cure" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\cure.jpeg" qualifiers="" type="drawable"/><file name="femaledoc" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\femaledoc.png" qualifiers="" type="drawable"/><file name="fosterhome" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\fosterhome.jpeg" qualifiers="" type="drawable"/><file name="icon" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\icon.png" qualifiers="" type="drawable"/><file name="ic_launcher_background" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\ic_launcher_background.xml" qualifiers="" type="drawable"/><file name="ic_launcher_foreground" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\ic_launcher_foreground.xml" qualifiers="" type="drawable"/><file name="male_doc" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\male_doc.png" qualifiers="" type="drawable"/><file name="vet" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\vet.jpeg" qualifiers="" type="drawable"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-hdpi\ic_launcher.webp" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-hdpi\ic_launcher_round.webp" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-mdpi\ic_launcher.webp" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-mdpi\ic_launcher_round.webp" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xhdpi\ic_launcher.webp" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xhdpi\ic_launcher_round.webp" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxhdpi\ic_launcher.webp" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.webp" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxxhdpi\ic_launcher.webp" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.webp" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\colors.xml" qualifiers=""><color name="purple_200">#FFBB86FC</color><color name="purple_500">#FF6200EE</color><color name="purple_700">#FF3700B3</color><color name="teal_200">#FF03DAC5</color><color name="teal_700">#FF018786</color><color name="black">#FF000000</color><color name="white">#FFFFFFFF</color></file><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Cats and Dogs</string></file><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.CatsAndDogs" parent="android:Theme.Material.Light.NoActionBar"/></file><file name="backup_rules" path="D:\androidProject\CatsandDogs\app\src\main\res\xml\backup_rules.xml" qualifiers="" type="xml"/><file name="data_extraction_rules" path="D:\androidProject\CatsandDogs\app\src\main\res\xml\data_extraction_rules.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\build\generated\res\resValues\debug"/><source path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\build\generated\res\resValues\debug"/><source path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices"><file path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices\values\values.xml" qualifiers=""><string name="gcm_defaultSenderId" translatable="false">967132385328</string><string name="google_api_key" translatable="false">AIzaSyBa5_o701qwAQ1ohcoMW3XDm2l_JUAbapw</string><string name="google_app_id" translatable="false">1:967132385328:android:39cc710dbb9cb24fab5df5</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyBa5_o701qwAQ1ohcoMW3XDm2l_JUAbapw</string><string name="google_storage_bucket" translatable="false">cats-and-dogs-792fd.appspot.com</string><string name="project_id" translatable="false">cats-and-dogs-792fd</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices" generated-set="res-processDebugGoogleServices$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><mergedItems/></merger>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\main\res"><file name="background" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\background.jpeg" qualifiers="" type="drawable"/><file name="cure" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\cure.jpeg" qualifiers="" type="drawable"/><file name="femaledoc" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\femaledoc.png" qualifiers="" type="drawable"/><file name="fosterhome" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\fosterhome.jpeg" qualifiers="" type="drawable"/><file name="icon" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\icon.png" qualifiers="" type="drawable"/><file name="ic_launcher_background" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\ic_launcher_background.xml" qualifiers="" type="drawable"/><file name="ic_launcher_foreground" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\ic_launcher_foreground.xml" qualifiers="" type="drawable"/><file name="male_doc" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\male_doc.png" qualifiers="" type="drawable"/><file name="vet" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\vet.jpeg" qualifiers="" type="drawable"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml" qualifiers="anydpi-v26" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-hdpi\ic_launcher.webp" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-hdpi\ic_launcher_round.webp" qualifiers="hdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-mdpi\ic_launcher.webp" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-mdpi\ic_launcher_round.webp" qualifiers="mdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xhdpi\ic_launcher.webp" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xhdpi\ic_launcher_round.webp" qualifiers="xhdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxhdpi\ic_launcher.webp" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.webp" qualifiers="xxhdpi-v4" type="mipmap"/><file name="ic_launcher" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxxhdpi\ic_launcher.webp" qualifiers="xxxhdpi-v4" type="mipmap"/><file name="ic_launcher_round" path="D:\androidProject\CatsandDogs\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.webp" qualifiers="xxxhdpi-v4" type="mipmap"/><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\colors.xml" qualifiers=""><color name="purple_200">#FFBB86FC</color><color name="purple_500">#FF6200EE</color><color name="purple_700">#FF3700B3</color><color name="teal_200">#FF03DAC5</color><color name="teal_700">#FF018786</color><color name="black">#FF000000</color><color name="white">#FFFFFFFF</color></file><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Cats and Dogs</string><string name="about_us">
+        Cats and Dogs started with a vision to bring pet owners and vets to a single platform. Often times in various social media pet groups, we see pet owners seeking advice on a number of health issues of their beloved pets. They receive suggestions from the common mass and also from vets. But due to unorganized availability of data and improper advice, the pet owners are often misguided and they do not receive the solution that they need. This situation is disappointing both to the pet owners and vets who genuinely want to come forward to help the pets. Cats and Dogs provides the solution to this problem in a number of ways. This app has a list of verified solutions to some of the most common health issues that your pets might face. If that list does not provide a solution, you can directly contact our certified list of vets available to provide service to you online. Just let them know your problem through a form and they shall provide you the  solution as soon as they can!
+
+\n\nDo you have any suggestions or feedbacks on this app? Please let us know at:
+\n\nkazinusrat36@gmail.com
+\nnailanausheen5@gmail.com
+    </string><string name="dhaka">
+    <b><u>Foster homes in Dhaka:</u></b>
+
+\n\n<b><u>1)  Foster Family Care</u></b>
+
+\nEvery day people face the question of what to do with their pets when they Travel, Illness or Family Emergencies disrupt normal care. Some pet owners attempt to solve this problem by taking their pets with them, It may not always be a good idea or not possible in emergency cases, Only if they manage to find a good Foster Home.
+
+\nEthical Pet Boarding is an important part of our pet care program because the selection of boarding is a confusing and disconcerting process for Pet Owners.
+FOSTER FAMILY CARE has Four years of serving experience and we can assure you that when your pets are in our hands they will be safe and we love your pet as if it\'s our baby.
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/Fosterfamcare/
+\nAddress:
+\nTolarbag 3 No Gate, Mirpur, Dhaka, Bangladesh, 1207
+\nMobile:
+\n01797-521069
+\nEmail:
+\nfosterfamilycare25@gmail.com
+
+\n\n<b><u>2) Elite Persian Foster Care</u></b>
+
+\n\nA comfortable foster home for your Persian cats where they will get home like feeling &amp; service.
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/elitecattery/
+\nMobile:
+\n01625-243198
+    </string><string name="cat_tapeworms"><b><u/></b>\n
+        \n\nTapeworms are one of the most common feline health problems. These parasites live in your cat\'s small intestine and can  grow to be as long as 2 feet. They\'re made up of segments called proglottids and usually break apart when your cat passes them. It\'s very unlikely to see a full worm. You\'ll usually just see the segments.
+
+\n\nSymptoms of a tapeworm infection can be hard to see but may include vomiting and weight loss. The easiest way to tell if your cat has tapeworms is to look at its poop, around its anus, and where it sleeps. Usually tapeworms come out of your cat\'s anus while it is sleeping or relaxed. If you see tiny white worms or what look like grains of rice or sesame seeds, your cat likely has tapeworms.
+        \nIf your cat is heavily infected, you may see other tapeworm symptoms such as:
+
+\n\n- Irritation in the anus area
+\n\n- Weight loss
+\n\n- Vomiting and diarrhea
+\n\n- Anemia
+\n\n- Dehydration
+\n\n- Inability to thrive
+        \n\n\nReference: https://www.webmd.com/pets/cats/6-most-common-cat-health-problems
+    </string><string name="show_more">Show more</string><string name="cat_vomit"><bold><u/></bold>\n
+        \n\nVomiting is a very common problem with cats with a multitude of causes. They range from eating something poisonous or inedible (like string), to infection, urinary tract disease, or diabetes to hairballs.\n
+
+
+\nSymptoms are usually obvious and include drooling and abdominal heaving. Vomiting can quickly leave your cat dehydrated, so if your cat continues vomiting or acts ill, call your vet right away. It may help to collect a sample of your cat\'s vomit and take it with you to the vet.
+
+\nSince there are so many possible causes of vomiting in cats, you can\'t prevent them all. But there are some things you can do to make some of the most common ones less likely:
+
+\n\n- Treat your cat for fleas. Fleas can cause intestinal parasites like tapeworms that in turn, cause vomiting.
+
+\n\n- Feed the right foods. It\'s best to stick with foods designed just for the nutritional needs of cats. Foods such as dairy products and raw or undercooked meats can make your cat sick.
+
+\n\n- Head off hairballs. To get rid of extra hair before your cat has a chance to swallow it, treat them to regular grooming sessions with a brush and comb. You can also try a laxative product formulated for hairballs: A dot placed on their paw once a week or so will help to lubricate their digestive tract.
+
+\n\n- Keep non-edible items out of reach. Watch out for and pick up things that might be tempting for your kitty to chew that if swallowed, could trigger vomiting, like rubber bands or thread. Keep things like poisonous houseplants and human medications away from your cat.
+
+\n\n\nReference: https://www.webmd.com/pets/cats/6-most-common-cat-health-problems
+
+    </string><string name="dog_parasites"><b><u/></b>\n
+        \n\nBefore you treat your dog for worms, be sure you recognize the warning signs that your dog may be infected, and familiarize yourself with the various types of intestinal parasites. The type of treatment you use will depend on the type of parasite that is infecting your dog.
+        There are several clues that may help you determine if your dog has worms.
+
+\nSymptoms to look for:
+
+\n\n- Worms or worm segments visible in your dog’s stool, vomit, fur, or bedding
+\n\n- Scratching or rubbing his rear on the ground or “scooting” against furniture
+\n\n- A bloated belly – especially in puppies
+\n\n- Weakness, increased appetite, constant hunger, weight loss
+\n\n- Dull coat
+\n\nEven if you do not see any of the symptoms above – your dog may still have worms. Discuss what you see with your veterinarian and have a fecal floatation exam performed to look for the presence of worm eggs.
+        \n\n\nReference: https://www.hartz.com/how-to-treat-your-dog-for-intestinal-parasites/#:~:text=Roundworms%20and%20hookworms%20can%20be,fenbendazole%20available%20from%20your%20veterinarian.
+
+
+    </string><string name="chittagong">
+        <b><u>List of foster homes in Chittagong:</u></b>
+
+\n\n<b><u>1) Catto Foster Care Ctg</u></b>
+
+\n\nCatto is a trusted Cat Sitting Service to take care of your cats when you are away on vacation.
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/profile.php?id=100085222026162
+\nAddress:
+\nCity Gate, Chittagong, Bangladesh
+\nMobile:
+\n01791-337796
+\nEmail:
+\nshawanarahman1994@gmail.com
+
+\n\n<b><u>2) Pet Care CTG Foster Home</u></b>
+
+\n\nWe provide foster care in our foster home, vaccination, and grooming along with home services all over Chattogram.We also transport basket size pets all over Bangladesh.
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/petcarectg/
+\nAddress:
+\nKhulshi Residential Area, Chittagong
+\nMobile:
+\n01711-396004
+\nEmail:
+\npetcarectg@gmail.com
+    </string><string name="show_less">Show less</string><string name="topic3">Cure for Dog Parasites</string><string name="topic4">Cure for Cat Tapeworms</string><string name="topic1">Cure for Cat Vomiting</string><string name="cat_fleas"><bold><u/></bold>\n
+        \n\nFleas are a very common external feline health problem. But it\'s one you can easily treat. Signs your cat has fleas include:
+
+\n\n- Flea dirt on its skin (it looks like tiny black dots)
+\n\n- Constant scratching
+\n\n- Frequent licking
+\n\n- Red or irritated skin
+\n\n- Hair loss
+\n\n- Skin infections or hot spots
+\n\nFleas can live for more than a year (although they typically don\'t) and your cat risks anemia if the problem becomes serious, so be sure to treat your cat\'s flea problem and prevent future infestations.
+    Talk to your vet about which flea control would be best for your cat. Treatments include oral medication, powders, foams, and topical medication.
+
+Remember that flea medications only kill fleas that come in contact with your cat. To prevent fleas:
+
+\n\n- Keep your cat inside.
+\n\n- Vacuum your floors, rugs and carpets, baseboards, and upholstered furniture daily.
+\n\n- Wash your cat’s bedding in hot, soapy water once a week.
+        \n\n\nReference: https://www.webmd.com/pets/cats/6-most-common-cat-health-problems
+    </string><string name="khulna">
+        <b><u>Foster home in Khulna:</u></b>
+
+\n\n<b><u>1) Khulna Cat Foster Home</u></b>
+\n\nTrusted foster home for your pets. Travel or prepare for your exam with no worries!
+\n\nContact Us:
+\nMobile:
+\n01711-309265
+    </string><string name="topic2">Cure for Cat Fleas</string><string name="topic7">Chittagong</string><string name="topic8">Khulna</string><string name="topic5">Dhaka</string><string name="sylhet">
+        <b><u>Foster homes in Sylhet:</u></b>
+
+\n\n<b><u>1)Sylhet Animals Rescuers - SAR</u></b>
+
+\n\nA squad for animal
+\nRescue
+\nTreatment &amp; Care
+\nShelter &amp; Release
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/groups/1387412454719467/
+
+\n\n<b><u>2)Heeramon Animal Rescue Shelter &amp; Foster Home</u></b>
+
+\n\nKeep your pet hare safely &amp; Secure.
+\nAn institution managed by 24 hours cc camera.
+
+\n\nContact Us:
+\nFacebook:
+\nhttps://www.facebook.com/p/Heeramon-Animal-Rescue-Shelter-Foster-Home-100083807277589/?paipv=0&amp;eav=AfY-lHEPQnLzKVhIgsFqZsoGAf6F_pz0SMtDxdlogg4JX6m-H27LUErh7kwwnVExyHY&amp;_rdr
+
+\n\nEmail:
+\nheeramon@gmail.com
+
+\nMobile: 01949-970908
+
+    </string><string name="topic6">Sylhet</string></file><file path="D:\androidProject\CatsandDogs\app\src\main\res\values\themes.xml" qualifiers=""><style name="Theme.CatsAndDogs" parent="android:Theme.Material.Light.NoActionBar"/></file><file name="backup_rules" path="D:\androidProject\CatsandDogs\app\src\main\res\xml\backup_rules.xml" qualifiers="" type="xml"/><file name="data_extraction_rules" path="D:\androidProject\CatsandDogs\app\src\main\res\xml\data_extraction_rules.xml" qualifiers="" type="xml"/><file name="aboutusphoto" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\aboutusphoto.png" qualifiers="" type="drawable"/><file name="catdogrealbg" path="D:\androidProject\CatsandDogs\app\src\main\res\drawable\catdogrealbg.png" qualifiers="" type="drawable"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\build\generated\res\resValues\debug"/><source path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\androidProject\CatsandDogs\app\build\generated\res\resValues\debug"/><source path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices"><file path="D:\androidProject\CatsandDogs\app\build\generated\res\processDebugGoogleServices\values\values.xml" qualifiers=""><string name="gcm_defaultSenderId" translatable="false">967132385328</string><string name="google_api_key" translatable="false">AIzaSyBa5_o701qwAQ1ohcoMW3XDm2l_JUAbapw</string><string name="google_app_id" translatable="false">1:967132385328:android:39cc710dbb9cb24fab5df5</string><string name="google_crash_reporting_api_key" translatable="false">AIzaSyBa5_o701qwAQ1ohcoMW3XDm2l_JUAbapw</string><string name="google_storage_bucket" translatable="false">cats-and-dogs-792fd.appspot.com</string><string name="project_id" translatable="false">cats-and-dogs-792fd</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="res-processDebugGoogleServices" generated-set="res-processDebugGoogleServices$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><mergedItems/></merger>

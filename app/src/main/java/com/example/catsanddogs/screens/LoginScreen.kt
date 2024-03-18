@@ -109,10 +109,10 @@ fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
                     }
                 }
             }
-            if(loginViewModel.loginInProgress.value){
-                CircularProgressIndicator()
-            }
+
         }
+        if(loginViewModel.loginInProgress.value){
+        CircularProgressIndicator() }
     }
 
 }
@@ -170,7 +170,4 @@ private fun TopSection(){
 
 
     )
-//    Text(
-//        text = "Login to receive pet care at "
-//    )
 }

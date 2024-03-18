@@ -5,7 +5,6 @@ attr argType
 attr buttonSize
 attr circleCrop
 attr colorScheme
-attr coordinatorLayoutStyle
 attr data
 attr dataPattern
 attr destination
@@ -25,15 +24,8 @@ attr fontWeight
 attr graph
 attr imageAspectRatio
 attr imageAspectRatioAdjust
-attr keylines
 attr lStar
 attr launchSingleTop
-attr layout_anchor
-attr layout_anchorGravity
-attr layout_behavior
-attr layout_dodgeInsetEdges
-attr layout_insetEdge
-attr layout_keyline
 attr mimeType
 attr navGraph
 attr nestedScrollViewStyle
@@ -51,7 +43,6 @@ attr scopeUris
 attr shortcutMatchRequired
 attr splashScreenIconSize
 attr startDestination
-attr statusBarBackground
 attr targetPackage
 attr ttcIndex
 attr uri
@@ -120,7 +111,10 @@ dimen splashscreen_icon_mask_stroke_with_background
 dimen splashscreen_icon_size
 dimen splashscreen_icon_size_no_background
 dimen splashscreen_icon_size_with_background
+drawable abc_vector_test
+drawable aboutusphoto
 drawable background
+drawable catdogrealbg
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -166,6 +160,7 @@ drawable notification_bg_low_pressed
 drawable notification_bg_normal
 drawable notification_bg_normal_pressed
 drawable notification_icon_background
+drawable notification_oversize_large_icon_bg
 drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
@@ -211,32 +206,24 @@ id action_text
 id actions
 id adjust_height
 id adjust_width
-id all
 id androidx_compose_ui_view_composition_context
 id async
 id auto
 id blocking
-id bottom
 id browser_actions_header_text
 id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id center
-id center_horizontal
-id center_vertical
 id chronometer
-id clip_horizontal
-id clip_vertical
+id coil_request_manager
 id compose_view_saveable_id_tag
 id consume_window_insets_tag
 id dark
 id dialog_button
-id end
-id fill
-id fill_horizontal
-id fill_vertical
+id edit_text_id
 id forever
+id hide_ime_id
 id hide_in_inspector_tag
 id icon
 id icon_group
@@ -245,7 +232,6 @@ id info
 id inspection_slot_table_set
 id is_pooling_container_tag
 id italic
-id left
 id light
 id line1
 id line3
@@ -257,12 +243,10 @@ id notification_main_column
 id notification_main_column_container
 id pooling_container_listener_holder_tag
 id report_drawn
-id right
 id right_icon
 id right_side
 id splashscreen_icon_view
 id standard
-id start
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -280,7 +264,6 @@ id text
 id text2
 id time
 id title
-id top
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
@@ -293,6 +276,8 @@ integer status_bar_notification_info_maxnum
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
+layout ime_base_split_test_activity
+layout ime_secondary_split_test_activity
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -303,6 +288,7 @@ layout splash_screen_view
 mipmap ic_launcher
 mipmap ic_launcher_round
 raw firebase_common_keep
+string about_us
 string androidx_startup
 string app_name
 string call_notification_answer_action
@@ -312,6 +298,10 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cat_fleas
+string cat_tapeworms
+string cat_vomit
+string chittagong
 string close_drawer
 string close_sheet
 string collapsed
@@ -336,7 +326,9 @@ string common_signin_button_text_long
 string copy_toast_msg
 string default_error_message
 string default_popup_window_title
+string dhaka
 string dialog
+string dog_parasites
 string dropdown_menu
 string expanded
 string fallback_menu_item_copy_link
@@ -349,6 +341,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string in_progress
 string indeterminate
+string khulna
 string navigation_menu
 string not_selected
 string off
@@ -357,10 +350,23 @@ string project_id
 string range_end
 string range_start
 string selected
+string show_less
+string show_more
 string status_bar_notification_info_overflow
 string switch_role
+string sylhet
 string tab
 string template_percent
+string tooltip_description
+string tooltip_label
+string topic1
+string topic2
+string topic3
+string topic4
+string topic5
+string topic6
+string topic7
+string topic8
 style Base_Theme_SplashScreen
 style Base_Theme_SplashScreen_DayNight
 style Base_Theme_SplashScreen_Light
@@ -382,12 +388,12 @@ style Theme_SplashScreen_Common
 style Theme_SplashScreen_IconBackground
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
-style Widget_Support_CoordinatorLayout
 styleable ActivityNavigator android_name action data dataPattern targetPackage
+styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
+styleable AnimatedStateListDrawableItem android_id android_drawable
+styleable AnimatedStateListDrawableTransition android_drawable android_toId android_fromId android_reversible
 styleable Capability queryPatterns shortcutMatchRequired
 styleable ColorStateListItem android_color android_alpha android_lStar alpha lStar
-styleable CoordinatorLayout keylines statusBarBackground
-styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
@@ -401,6 +407,8 @@ styleable NavHost navGraph
 styleable NavInclude graph
 styleable Navigator android_label android_id route
 styleable SignInButton buttonSize colorScheme scopeUris
+styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
+styleable StateListDrawableItem android_drawable
 xml backup_rules
 xml data_extraction_rules
 xml image_share_filepaths

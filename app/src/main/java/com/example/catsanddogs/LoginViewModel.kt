@@ -33,6 +33,16 @@ class LoginViewModel : ViewModel(){
             is LoginUIEvent.LoginButtonClicked ->{
                 login(navController = event.navController)
             }
+
+            is LoginUIEvent.LogoutButtonClicked ->{
+                logout()
+                loginUIState.value = loginUIState.value.copy(
+                    email = ""
+                )
+                loginUIState.value = loginUIState.value.copy(
+                    password = ""
+                )
+            }
         }
 
         validateLoginUIDataWithRules()
@@ -72,6 +82,10 @@ class LoginViewModel : ViewModel(){
             .addOnFailureListener{
 
             }
+    }
+    private fun logout() {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.signOut()
     }
 
 }

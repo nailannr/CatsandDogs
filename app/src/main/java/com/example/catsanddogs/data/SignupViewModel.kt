@@ -147,7 +147,7 @@ class SignupViewModel : ViewModel() {
 //                licenseResult.status &&
                 degreeResult.status &&
                 workResult.status &&
-                imageResult.status &&
+//                imageResult.status &&
                 setPassResult.status
 //                confirmPassResult.status
 

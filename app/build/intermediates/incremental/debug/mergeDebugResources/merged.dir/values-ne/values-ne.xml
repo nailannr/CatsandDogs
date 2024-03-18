@@ -10,7 +10,7 @@
     <string msgid="406453423630273620" name="close_drawer">"नेभिगेसन मेनु बन्द गर्नुहोस्"</string>
     <string msgid="7573152094250666567" name="close_sheet">"पाना बन्द गर्नुहोस्"</string>
     <string msgid="5389587048670450460" name="collapsed">"कोल्याप्स गरियो"</string>
-    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">सक्रिय गर्नुहोस्</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">अन गर्नुहोस्</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s ले तपाईँले Google Play सेवाहरू सक्षम नगरेसम्म काम गर्दैन।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play सेवाहरू सक्षम पार्नुहोस्</string>
     <string msgid="7153882981874058840" name="common_google_play_services_install_button">स्थापना गर्नुहोस्</string>
@@ -50,4 +50,6 @@
     <string msgid="2561197295334830845" name="switch_role">"बदल्नुहोस्"</string>
     <string msgid="1672349317127674378" name="tab">"ट्याब"</string>
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> प्रतिशत।"</string>
+    <string msgid="3765533235322692011" name="tooltip_description">"टुलटिप"</string>
+    <string msgid="3124740595719787496" name="tooltip_label">"टुलटिप देखाइयोस्"</string>
 </resources>

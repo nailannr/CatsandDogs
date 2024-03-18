@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.catsanddogs.app-mergeDebugResources-57:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.catsanddogs.app-mergeDebugResources-59:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Tc\\.gradle\\caches\\transforms-3\\8d30bf438fe1b7c0f90f81f9d3a92196\\transformed\\core-splashscreen-1.0.1\\res\\values-watch-v20\\values-watch-v20.xml",

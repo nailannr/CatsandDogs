@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
+import androidx.compose.material.icons.automirrored.outlined.ExitToApp
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
@@ -55,12 +57,12 @@ import androidx.navigation.NavController
 import com.example.catsanddogs.R
 import kotlinx.coroutines.launch
 
-data class NavigationBarItems(
-    val route : String,
-    val title: String,
-    val selectedIcon: ImageVector,
-    val unselectedIcon: ImageVector
-)
+//data class NavigationBarItems(
+//    val route : String,
+//    val title: String,
+//    val selectedIcon: ImageVector,
+//    val unselectedIcon: ImageVector
+//)
 
 
 //@Preview(showSystemUi = true)
@@ -93,12 +95,12 @@ fun PetOwnerHomeScreen(navController: NavController) {
                         selectedIcon = Icons.Filled.Home,
                         unselectedIcon = Icons.Outlined.Home
                     ),
-//                    NavigationBarItems(
-//                        route = "login_screen",
-//                        title = "Log Out",
-//                        selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
-//                        unselectedIcon = Icons.AutoMirrored.Outlined.ExitToApp
-//                    ),
+                    NavigationBarItems(
+                        route = "login_screen",
+                        title = "Log Out",
+                        selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
+                        unselectedIcon = Icons.AutoMirrored.Outlined.ExitToApp
+                    ),
                     NavigationBarItems(
                         route = "home_screen",
                         title = "About Us",
@@ -128,7 +130,7 @@ fun PetOwnerHomeScreen(navController: NavController) {
                                     },
                                     selected = index == selectedItemIndex,
                                     onClick = {
-                                        //navController.navigate(navigationBarItems.route)
+                                        navController.navigate(navigationBarItems.route)
                                         selectedItemIndex = index
                                         scope.launch {
                                             drawerState.close()
@@ -197,7 +199,7 @@ fun PetOwnerHomeScreen(navController: NavController) {
                                             color = Color(0xFFFFDBE9)
                                         )
                                         .clickable {
-
+                                            navController.navigate(Routes.foster_screen)
                                         }) {
                                     Text(
                                         text = "Looking for a foster home?",
@@ -261,7 +263,7 @@ fun PetOwnerHomeScreen(navController: NavController) {
                                             color = Color(0xFFFFDBE9)
                                         )
                                         .clickable {
-//                                            navController.navigate(Screens.CureScreen.route)
+                                            navController.navigate(Routes.cure_screen)
                                         }) {
                                     Text(
                                         text = "Looking for a cure?",

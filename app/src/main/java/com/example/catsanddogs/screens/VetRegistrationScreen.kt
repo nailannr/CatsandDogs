@@ -3,6 +3,7 @@ package com.example.catsanddogs.screens
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -57,8 +58,8 @@ import com.example.catsanddogs.data.SignupUIEvent
 import com.example.catsanddogs.ui.theme.textFieldContainer
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-//import com.google.firebase.storage.StorageReference
-//import com.google.firebase.storage.storage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.storage
 import java.util.UUID
 
 
@@ -227,10 +228,10 @@ fun upload(
 
     )
 
-//    val storage= Firebase.storage
+    val storage= Firebase.storage
     val db = Firebase.firestore
 
-    db.collection("petInfo")
+    db.collection("vetInfo")
         .add(newVet)
         .addOnSuccessListener { documentReference ->
             Log.d("newPetAdded", "DocumentSnapshot added with ID: ${documentReference.id}")
@@ -238,6 +239,38 @@ fun upload(
         .addOnFailureListener { e ->
             Log.w("failedHouseAdded", "Error adding document", e)
         }
+
+    var storageRef = storage.reference
+    var spaceRef: StorageReference
+
+
+    spaceRef = storageRef.child("vet/${unique_image_name}.jpg")
+
+    val byteArray: ByteArray? = context.contentResolver
+        .openInputStream(uri)
+        ?.use { it.readBytes() }
+
+    byteArray?.let{
+
+        var uploadTask = spaceRef.putBytes(byteArray)
+        uploadTask.addOnFailureListener {
+            Toast.makeText(
+                context,
+                "upload failed",
+                Toast.LENGTH_SHORT
+            ).show()
+            // Handle unsuccessful uploads
+        }.addOnSuccessListener { taskSnapshot ->
+            // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
+            // ...
+            Toast.makeText(
+                context,
+                "upload successful!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
 
 }
 
