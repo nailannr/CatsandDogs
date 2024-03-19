@@ -184,19 +184,6 @@ fun VetRegistrationScreen(navController: NavController,
                     )
 
 
-                    // image textfield:
-//                    var addImage by rememberSaveable {
-//                        mutableStateOf("")
-//                    }
-//                    var uri by remember{
-//                        mutableStateOf<Uri?>(null)
-//                    }
-//                    val singlePhotoPicker = rememberLauncherForActivityResult(
-//                        contract = ActivityResultContracts.PickVisualMedia(),
-//                        onResult = {
-//                            uri = it
-//                        }
-//                    )
                     var iMage = imageTextField(
                         modifier = Modifier.fillMaxWidth(),
                         name = "Add image",
@@ -221,10 +208,6 @@ fun VetRegistrationScreen(navController: NavController,
                         errorStatus = true
                     )
 
-//                    var cPass= PasswordTextField(name = "Confirm Password", modifier = Modifier.fillMaxWidth(),
-//                        onTextSelected = {
-//                            signupViewModel.onEvent(SignupUIEvent.ConfirmPassChanged(it)) },
-//                        errorStatus = signupViewModel.registrationUIState.value.confirmPassError)
 
                     Spacer(modifier = Modifier.height(20.dp))
 
@@ -242,6 +225,7 @@ fun VetRegistrationScreen(navController: NavController,
                                 degree = degree,
                                 work = work)
                         }
+
                     },
                     isEnabled = true)
             }
@@ -267,8 +251,8 @@ fun upload(
         "contactNum" to "$contactNum",
         "degree" to "$degree",
         "work" to "$work",
-        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2F${unique_image_name}.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
-
+//        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2F${unique_image_name}.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
+        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Fmale_doc.png?alt=media&token=7d26a46e-e76b-453b-bc46-23558251ed99"
     )
 
     val storage= Firebase.storage

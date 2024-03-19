@@ -10,6 +10,8 @@ object Routes {
     const val about_us = "about_us"
     const val home_screen_vet = "home_screen_vet"
     const val foster_screen = "foster_screen"
+    const val patient_form = "patient_form"
+    const val profile_screen = "profile_screen"
 
     const val vet_list = "vet_list"
     const val vet_details = "vet_details"

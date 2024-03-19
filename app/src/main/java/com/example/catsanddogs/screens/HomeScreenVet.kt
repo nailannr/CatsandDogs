@@ -20,8 +20,10 @@ import androidx.compose.material.icons.automirrored.outlined.ExitToApp
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -89,6 +91,12 @@ fun HomeScreenVet(navController: NavController) {
                         unselectedIcon = Icons.Outlined.Home
                     ),
                     NavigationBarItems(
+                        route = Routes.profile_screen,
+                        title = "Profile",
+                        selectedIcon = Icons.Filled.Person,
+                        unselectedIcon = Icons.Outlined.Person
+                    ),
+                    NavigationBarItems(
                         route = Routes.login_screen,
                         title = "Log Out",
                         selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
@@ -124,7 +132,7 @@ fun HomeScreenVet(navController: NavController) {
                                     selected = index == selectedItemIndex,
                                     onClick = {
                                         selectedItemIndex = index
-                                        if(index ==1){
+                                        if(index ==2){
                                             navController.popBackStack(
                                                 route = navigationBarItems.route,
                                                 inclusive = false

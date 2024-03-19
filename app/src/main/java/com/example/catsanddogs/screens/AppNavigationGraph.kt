@@ -109,6 +109,14 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
             VetListScreen( navController = navController)
         }
 
+        composable(Routes.patient_form){
+            PatientForm(navController = navController)
+        }
+        
+        composable(Routes.profile_screen){
+            ProfileScreen(navController = navController)
+        }
+
 
 //        composable(Routes.vet_list){
 //            VetListScreen(imageId,names,degrees, navController)

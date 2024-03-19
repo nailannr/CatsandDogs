@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
 class SignupViewModel : ViewModel() {
     var registrationUIState = mutableStateOf(RegistrationUIState())
 
+    var loginUIState = mutableStateOf(LoginUIState())
+
     val allValidationPassedP = mutableStateOf(false)
     val allValidationPassedV = mutableStateOf(false)
 

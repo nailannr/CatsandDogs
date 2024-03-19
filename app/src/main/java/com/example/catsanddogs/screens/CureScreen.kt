@@ -23,8 +23,10 @@ import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerValue
@@ -79,6 +81,12 @@ fun CureScreen(navController: NavController) {
                 unselectedIcon = Icons.Outlined.Home
             ),
             NavigationBarItems(
+                route = Routes.profile_screen,
+                title = "Profile",
+                selectedIcon = Icons.Filled.Person,
+                unselectedIcon = Icons.Outlined.Person
+            ),
+            NavigationBarItems(
                 route = Routes.login_screen,
                 title = "Log Out",
                 selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
@@ -114,7 +122,7 @@ fun CureScreen(navController: NavController) {
                             selected = index == selectedItemIndex,
                             onClick = {
                                 selectedItemIndex = index
-                                if(index ==1){
+                                if(index ==2){
                                     navController.popBackStack(
                                         route = navigationBarItems.route,
                                         inclusive = false

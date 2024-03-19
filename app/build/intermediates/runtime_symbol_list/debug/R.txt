@@ -164,6 +164,7 @@ int drawable notification_template_icon_bg 0x7f040033
 int drawable notification_template_icon_low_bg 0x7f040034
 int drawable notification_tile_bg 0x7f040035
 int drawable notify_panel_notification_icon_bg 0x7f040036
+int drawable profile 0x7f040038
 int drawable vet 0x7f040037
 int id accessibility_action_clickable_span 0x7f050000
 int id accessibility_custom_action_0 0x7f050001
