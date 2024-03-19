@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color ic_launcher_background
 color purple_200
 color purple_500
 color purple_700
@@ -18,8 +19,10 @@ drawable ic_launcher_foreground
 drawable icon
 drawable male_doc
 drawable profile
+drawable profile2
 drawable vet
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string about_us
 string app_name

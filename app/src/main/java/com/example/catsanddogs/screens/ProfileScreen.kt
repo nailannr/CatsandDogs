@@ -18,10 +18,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.automirrored.outlined.ExitToApp
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Group
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Percent
@@ -216,7 +219,7 @@ fun ProfileScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.profile),
+                            painter = painterResource(id = R.drawable.profile2),
                             contentDescription = null,
                             modifier = Modifier.clip(RoundedCornerShape(16.dp))
                                 .size(120.dp)
@@ -235,20 +238,20 @@ fun ProfileScreen(
                         )
                         Spacer(modifier = Modifier.height(12.dp))
                         details(
-                            imageVector = Icons.Default.Person,
+                            imageVector = Icons.Default.Email,
                             title ="Email:",
                             content = "${profile.value.email}"
                         )
                         Spacer(modifier = Modifier.height(12.dp))
                         details(
-                            imageVector = Icons.Default.Person,
+                            imageVector = Icons.Default.Phone,
                             title ="Contact Number:",
                             content = "${profile.value.contactNo}"
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
                         details(
-                            imageVector = Icons.Default.Person,
+                            imageVector = Icons.Default.Group,
                             title ="Using as:",
                             content = "${profile.value.role}"
                         )

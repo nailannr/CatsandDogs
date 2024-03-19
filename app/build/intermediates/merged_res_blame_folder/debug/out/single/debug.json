@@ -16,8 +16,24 @@
         "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\drawable\\background.jpeg"
     },
     {
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\drawable_cure.jpeg.flat",
         "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\drawable\\cure.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\drawable_profile.png.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\drawable\\profile.png"
+    },
+    {
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\mipmap-hdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -40,8 +56,12 @@
         "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\drawable\\fosterhome.jpeg"
     },
     {
-        "merged": "com.example.catsanddogs.app-merged_res-61:/drawable_profile.png.flat",
-        "source": "com.example.catsanddogs.app-main-63:/drawable/profile.png"
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -86,6 +106,10 @@
     {
         "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\drawable_male_doc.png.flat",
         "source": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-main-63:\\drawable\\male_doc.png"
+    },
+    {
+        "merged": "com.example.catsanddogs.app-merged_res-61:/drawable_profile2.jpeg.flat",
+        "source": "com.example.catsanddogs.app-main-63:/drawable/profile2.jpeg"
     },
     {
         "merged": "C:\\Users\\Tc\\.gradle\\daemon\\8.0\\com.example.catsanddogs.app-merged_res-61:\\drawable_ic_launcher_foreground.xml.flat",

@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.example.catsanddogs.data.rules.Validator
 import com.example.catsanddogs.screens.Routes
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.firestore
 
 class SignupViewModel : ViewModel() {
     var registrationUIState = mutableStateOf(RegistrationUIState())
@@ -32,6 +34,9 @@ class SignupViewModel : ViewModel() {
             }
             is SignupUIEvent.EmailChanged ->{
                 registrationUIState.value = registrationUIState.value.copy(
+                    email = event.email
+                )
+                loginUIState.value = loginUIState.value.copy(
                     email = event.email
                 )
             }
@@ -75,8 +80,40 @@ class SignupViewModel : ViewModel() {
             }
 
             is SignupUIEvent.RegisterButtonClicked ->{
+                val db = Firebase.firestore
+                val newProfile = hashMapOf(
+                    "firstName" to registrationUIState.value.firstName,
+                    "lastName" to registrationUIState.value.lastName,
+                    "email" to registrationUIState.value.email,
+                    "contactNo" to registrationUIState.value.phoneNum,
+                    "role" to if(registrationUIState.value.asVet) "Veterinarian" else "Pet Owner"
+                )
+                db.collection("profile")
+                    .add(newProfile)
+                    .addOnSuccessListener { documentReference ->
+                        //Log.d("newHouseAdded", "DocumentSnapshot added with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        // Log.w("failedHouseAdded", "Error adding document", e)
+                    }
                 signUp(navController = event.navController)
             }
+
+            is SignupUIEvent.FromOwnerButton -> {
+                registrationUIState.value = registrationUIState.value.copy(
+                    asVet = false
+                )
+            }
+
+            is SignupUIEvent.FromVetButton -> {
+                registrationUIState.value = registrationUIState.value.copy(
+                    asVet = false
+                )
+            }
+
+//            is SignupUIEvent.VetRegisterButtonClicked ->{
+//                signUp(navController = event.navController)
+//            }
         }
     }
 

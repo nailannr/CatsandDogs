@@ -22,13 +22,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.catsanddogs.R
 import com.example.catsanddogs.data.RegistrationUIState
+import com.example.catsanddogs.data.SignupUIEvent
 import com.example.catsanddogs.data.SignupViewModel
 
 @Composable
-fun OptionScreen(navController: NavController){
+fun OptionScreen(navController: NavController,
+                 signupViewModel: SignupViewModel = viewModel()){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),
@@ -38,7 +41,9 @@ fun OptionScreen(navController: NavController){
     ){
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier.padding(0.dp,120.dp,0.dp,0.dp).size(160.dp)
+            modifier = Modifier
+                .padding(0.dp, 120.dp, 0.dp, 0.dp)
+                .size(160.dp)
 
         ){
             Image(
@@ -63,6 +68,7 @@ fun OptionScreen(navController: NavController){
         )
 
         Button(onClick = {
+            signupViewModel.onEvent(SignupUIEvent.FromVetButton)
             navController.navigate(Routes.vet_registration)
         },
             modifier = Modifier
@@ -85,6 +91,7 @@ fun OptionScreen(navController: NavController){
         }
 
         Button(onClick = {
+            signupViewModel.onEvent(SignupUIEvent.FromOwnerButton)
             navController.navigate(Routes.pet_owner_reg)
         },
             modifier = Modifier

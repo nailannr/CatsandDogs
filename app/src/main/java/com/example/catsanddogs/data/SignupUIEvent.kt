@@ -16,4 +16,9 @@ sealed class SignupUIEvent{
     data class ImageChanged(val image: String): SignupUIEvent()
 
     data class RegisterButtonClicked(val navController: NavController) : SignupUIEvent()
+    object FromVetButton: SignupUIEvent()
+
+    object FromOwnerButton: SignupUIEvent()
+
+//    data class VetRegisterButtonClicked(val navController: NavController, val isVet: Boolean) : SignupUIEvent()
 }

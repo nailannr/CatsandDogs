@@ -67,7 +67,6 @@ import java.util.UUID
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VetRegistrationScreen(navController: NavController,
-                          onButtonClicked: () -> Unit,
                           signupViewModel: SignupViewModel = viewModel()) {
     var addImage by rememberSaveable {
         mutableStateOf("")
@@ -225,9 +224,28 @@ fun VetRegistrationScreen(navController: NavController,
                                 degree = degree,
                                 work = work)
                         }
-
                     },
                     isEnabled = true)
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(
+                    modifier = Modifier
+                        .width(150.dp)
+                        .height(50.dp),
+                    onClick = {
+                        navController.navigate(Routes.home_screen_vet)
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        Color(218, 102, 147, 255),
+                        contentColor = Color.White
+                    ),
+                    shape = RoundedCornerShape(size = 4.dp)
+
+                ) {
+                    Text(
+                        text = "Go to home screen",
+                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold)
+                    )
+                }
             }
         }
         if (signupViewModel.signUpInProgress.value) {
@@ -251,8 +269,8 @@ fun upload(
         "contactNum" to "$contactNum",
         "degree" to "$degree",
         "work" to "$work",
-//        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2F${unique_image_name}.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
-        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Fmale_doc.png?alt=media&token=7d26a46e-e76b-453b-bc46-23558251ed99"
+        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Ffemaledoc.png?alt=media&token=e6a83ad2-fcc3-48b4-beff-488ab089701b"
+//        "image" to "https://firebasestorage.googleapis.com/v0/b/cats-and-dogs-792fd.appspot.com/o/vet%2Fmale_doc.png?alt=media&token=7d26a46e-e76b-453b-bc46-23558251ed99"
     )
 
     val storage= Firebase.storage

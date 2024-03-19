@@ -42,6 +42,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -49,6 +50,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -85,25 +88,13 @@ fun HomeScreenVet(navController: NavController) {
             ) {
                 val items = listOf(
                     NavigationBarItems(
-                        route = Routes.home_screen,
+                        route = Routes.home_screen_vet,
                         title = "Home",
                         selectedIcon = Icons.Filled.Home,
                         unselectedIcon = Icons.Outlined.Home
                     ),
                     NavigationBarItems(
-                        route = Routes.profile_screen,
-                        title = "Profile",
-                        selectedIcon = Icons.Filled.Person,
-                        unselectedIcon = Icons.Outlined.Person
-                    ),
-                    NavigationBarItems(
-                        route = Routes.login_screen,
-                        title = "Log Out",
-                        selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
-                        unselectedIcon = Icons.AutoMirrored.Outlined.ExitToApp
-                    ),
-                    NavigationBarItems(
-                        route = Routes.about_us ,
+                        route = Routes.about_us,
                         title = "About Us",
                         selectedIcon = Icons.Filled.Info,
                         unselectedIcon = Icons.Outlined.Info
@@ -114,7 +105,7 @@ fun HomeScreenVet(navController: NavController) {
                 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
                 val scope = rememberCoroutineScope()
                 var selectedItemIndex by rememberSaveable {
-                    mutableStateOf(0)
+                    mutableIntStateOf(0)
                 }
 
                 ModalNavigationDrawer(
@@ -126,21 +117,13 @@ fun HomeScreenVet(navController: NavController) {
                                     label = {
                                         Text(
                                             text = navigationBarItems.title,
-                                            fontFamily = androidx.compose.ui.text.font.FontFamily.Serif
+                                            fontFamily = FontFamily.Serif
                                         )
                                     },
                                     selected = index == selectedItemIndex,
                                     onClick = {
+                                        //navController.navigate(navigationBarItems.route)
                                         selectedItemIndex = index
-                                        if(index ==2){
-                                            navController.popBackStack(
-                                                route = navigationBarItems.route,
-                                                inclusive = false
-                                            )
-                                        }else{
-                                            navController.navigate(navigationBarItems.route)
-                                        }
-
                                         scope.launch {
                                             drawerState.close()
                                         }
@@ -169,7 +152,7 @@ fun HomeScreenVet(navController: NavController) {
                         topBar = {
                             CenterAlignedTopAppBar(
                                 title = {
-                                    Text(text = "Cats and Dogs", fontFamily = androidx.compose.ui.text.font.FontFamily.Serif)
+                                    Text(text = "Cats and Dogs", fontFamily = FontFamily.Serif)
 
                                 },
                                 navigationIcon = {
@@ -211,29 +194,41 @@ fun HomeScreenVet(navController: NavController) {
                                         .clickable {
                                             //navController.navigate(Screens.VetListScreen.route)
                                         }) {
-                                    Text(
-                                        text = "Patients",
-                                        modifier = Modifier.padding(10.dp),
-                                        fontSize = 20.sp,
-                                        textDecoration = TextDecoration.Underline,
-                                        fontFamily = androidx.compose.ui.text.font.FontFamily.Serif
-                                    )
+                                    Spacer(modifier = Modifier.height(40.dp))
                                     Image(
-                                        painterResource(id = R.drawable.vet),
+                                        painterResource(id = R.drawable.icon),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .fillMaxWidth()
                                             .padding(15.dp)
-                                            .background(Color.White)
+                                            .background(Color(0xFFFFDBE9))
 
                                     )
                                 }
+                                Column (
+                                    verticalArrangement = Arrangement.Center,
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .background(Color(0xFFFFDBE9))
+                                ){
+                                    Text(
+                                        text = "Thanks for registration! We will reach out to you via mail after your account confirmation.",
+                                        modifier = Modifier.padding(10.dp),
+                                        textAlign = TextAlign.Center,
+                                        fontSize = 20.sp,
+                                        fontFamily = FontFamily.Serif
+                                    )
+                                }
+
                             }
                         }
                     }
                 }
 
             }
+
+            //}
         }
     }
 }

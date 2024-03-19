@@ -59,12 +59,6 @@ import androidx.navigation.NavController
 import com.example.catsanddogs.R
 import kotlinx.coroutines.launch
 
-//data class NavigationBarItems(
-//    val route : String,
-//    val title: String,
-//    val selectedIcon: ImageVector,
-//    val unselectedIcon: ImageVector
-//)
 
 
 //@Preview(showSystemUi = true)
@@ -104,13 +98,13 @@ fun PetOwnerHomeScreen(navController: NavController) {
                         unselectedIcon = Icons.Outlined.Person
                     ),
                     NavigationBarItems(
-                        route = "login_screen",
+                        route = Routes.login_screen,
                         title = "Log Out",
                         selectedIcon = Icons.AutoMirrored.Filled.ExitToApp,
                         unselectedIcon = Icons.AutoMirrored.Outlined.ExitToApp
                     ),
                     NavigationBarItems(
-                        route = "home_screen",
+                        route = Routes.about_us,
                         title = "About Us",
                         selectedIcon = Icons.Filled.Info,
                         unselectedIcon = Icons.Outlined.Info

@@ -1,6 +1,10 @@
 package com.example.catsanddogs.screens
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
@@ -16,42 +20,45 @@ import com.example.catsanddogs.data.SignupUIEvent
 @Composable
 fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
                        loginViewModel: LoginViewModel = viewModel()) {
+    var fromLogIn by rememberSaveable {
+        mutableStateOf(false)
+    }
 
-    val imageId = arrayOf(
-        R.drawable.male_doc,
-        R.drawable.femaledoc,
-        R.drawable.male_doc,
-        R.drawable.femaledoc,
-        R.drawable.male_doc
-    )
-    val names = arrayOf(
-        "Dr. Md. Mosharaf Hossain",
-        "Dr. Ruksana Ahmed",
-        "Dr. Abdullah-Al-Aziz",
-        "Dr. Muslima Rahman",
-        "Dr. Tasmir Rayan"
-    )
-    val degrees = arrayOf(
-        "DVM, Phd (JAPAN) MS",
-        "DVM, MS",
-        "DVM",
-        "DVM",
-        "DVM"
-    )
-    val work = arrayOf(
-        "Sher-e-Bangla Agricultural University",
-        "Bakergonj Upazila Livestock Office & Veterinary Hospital",
-        "Veterinary Teaching Hospital, BAU",
-        "Titlark Petwell Center",
-        "Pet Point Gazipur"
-    )
-    val contact = arrayOf(
-        "Contact: 017XXXXXXXX\nEmail: mosharafhos@gmail.com",
-        "Contact: 017XXXXXXXX\nEmail: ruksanaahmed@gmail.com",
-        "Contact: 018XXXXXXXX\nEmail: abdullaziz@gmail.com",
-        "Contact: 019XXXXXXXX\nEmail: muslimar@gmail.com",
-        "Contact: 017XXXXXXXX\nEmail: rayantasmir@gmail.com"
-    )
+//    val imageId = arrayOf(
+//        R.drawable.male_doc,
+//        R.drawable.femaledoc,
+//        R.drawable.male_doc,
+//        R.drawable.femaledoc,
+//        R.drawable.male_doc
+//    )
+//    val names = arrayOf(
+//        "Dr. Md. Mosharaf Hossain",
+//        "Dr. Ruksana Ahmed",
+//        "Dr. Abdullah-Al-Aziz",
+//        "Dr. Muslima Rahman",
+//        "Dr. Tasmir Rayan"
+//    )
+//    val degrees = arrayOf(
+//        "DVM, Phd (JAPAN) MS",
+//        "DVM, MS",
+//        "DVM",
+//        "DVM",
+//        "DVM"
+//    )
+//    val work = arrayOf(
+//        "Sher-e-Bangla Agricultural University",
+//        "Bakergonj Upazila Livestock Office & Veterinary Hospital",
+//        "Veterinary Teaching Hospital, BAU",
+//        "Titlark Petwell Center",
+//        "Pet Point Gazipur"
+//    )
+//    val contact = arrayOf(
+//        "Contact: 017XXXXXXXX\nEmail: mosharafhos@gmail.com",
+//        "Contact: 017XXXXXXXX\nEmail: ruksanaahmed@gmail.com",
+//        "Contact: 018XXXXXXXX\nEmail: abdullaziz@gmail.com",
+//        "Contact: 019XXXXXXXX\nEmail: muslimar@gmail.com",
+//        "Contact: 017XXXXXXXX\nEmail: rayantasmir@gmail.com"
+//    )
 
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.splash_screen) {
@@ -62,17 +69,21 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
         composable(Routes.login_screen){
             LoginScreen(navController = navController,
                 onButtonClicked = {
+                    fromLogIn = true
                     loginViewModel.onEvent(LoginUIEvent.LoginButtonClicked(navController))
                 },
                 loginViewModel)
         }
 
         composable(Routes.option_screen){
-            OptionScreen(navController = navController)
+            OptionScreen(navController = navController,
+                signupViewModel = signupViewModel)
         }
 
         composable(Routes.pet_owner_reg){
-            PetOwnerRegScreen(onButtonClicked = {
+            PetOwnerRegScreen(
+                onButtonClicked = {
+                    fromLogIn = false
                 signupViewModel.onEvent(SignupUIEvent.RegisterButtonClicked(navController))
             },
                 signupViewModel)
@@ -80,8 +91,6 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
 
         composable(Routes.vet_registration){
             VetRegistrationScreen(navController = navController,
-                onButtonClicked = {
-                    signupViewModel.onEvent(SignupUIEvent.RegisterButtonClicked(navController)) },
                 signupViewModel)
         }
 
@@ -114,7 +123,11 @@ fun AppNavigationGraph(signupViewModel: SignupViewModel = viewModel(),
         }
         
         composable(Routes.profile_screen){
-            ProfileScreen(navController = navController)
+            ProfileScreen(
+                loginViewModel= loginViewModel,
+                signupViewModel = signupViewModel,
+                navController = navController,
+                fromLogIn = fromLogIn)
         }
 
 

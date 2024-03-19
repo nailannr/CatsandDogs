@@ -36,9 +36,7 @@ import androidx.navigation.NavController
 import com.example.catsanddogs.LoginViewModel
 import com.example.catsanddogs.R
 import com.example.catsanddogs.data.LoginUIEvent
-import com.example.catsanddogs.data.SignupViewModel
-import com.example.catsanddogs.data.SignupUIEvent
-import kotlin.math.log
+
 
 @Composable
 fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
@@ -102,9 +100,10 @@ fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
                             )
                         }
 
-                        buttonComponent(onButtonClicked = onButtonClicked,
+                        buttonComponent(
+                            navController = navController,
+                            onButtonClicked = onButtonClicked,
                             isEnabled = loginViewModel.allValidationsPassed.value)
-
 
                     }
                 }
@@ -120,6 +119,7 @@ fun LoginScreen(navController: NavController, onButtonClicked: () -> Unit,
 
 @Composable
 private fun buttonComponent(
+    navController: NavController,
     onButtonClicked: ()-> Unit,
     isEnabled: Boolean
 

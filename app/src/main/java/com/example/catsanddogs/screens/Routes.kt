@@ -14,6 +14,5 @@ object Routes {
     const val profile_screen = "profile_screen"
 
     const val vet_list = "vet_list"
-    const val vet_details = "vet_details"
     const val cure_screen = "cure_screen"
 }
